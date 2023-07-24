@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "vanrec",
+    "name": "Vanilla Recipes",
+    "description": "Provides alternative ways to acquire items",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "omerbenda"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
