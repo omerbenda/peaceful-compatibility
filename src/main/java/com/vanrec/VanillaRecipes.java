@@ -1,6 +1,7 @@
 package com.vanrec;
 
 import com.mojang.logging.LogUtils;
+import com.vanrec.event.PlayerInteractListener;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,6 +27,7 @@ public class VanillaRecipes {
     modEventBus.addListener(this::commonSetup);
 
     MinecraftForge.EVENT_BUS.register(this);
+    MinecraftForge.EVENT_BUS.register(new PlayerInteractListener());
 
     modEventBus.addListener(this::addCreative);
 
