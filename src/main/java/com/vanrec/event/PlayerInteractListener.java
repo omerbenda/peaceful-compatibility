@@ -19,14 +19,15 @@ public class PlayerInteractListener {
     BlockState blockState = level.getBlockState(blockPos);
     Player player = event.getEntity();
     InteractionHand hand = event.getHand();
-    boolean result = false;
 
     if (blockState.is(Blocks.WATER_CAULDRON)) {
-      result = CauldronHandler.handleCauldronUse(
+      boolean result = CauldronHandler.handleCauldronUse(
           level, blockPos, blockState, player, player.getItemInHand(hand));
-    }
+      event.setCanceled(result);
 
-    event.setCanceled(result);
-    event.setCancellationResult(InteractionResult.CONSUME);
+      if (result) {
+        event.setCancellationResult(InteractionResult.CONSUME);
+      }
+    }
   }
 }

@@ -12,6 +12,10 @@ import net.minecraft.world.level.block.state.BlockState;
 public class CauldronHandler {
   public static boolean handleCauldronUse(
       Level level, BlockPos blockPos, BlockState blockState, Player player, ItemStack itemStack) {
+    if (player.isCrouching()) {
+      return false;
+    }
+
     Optional<Item> resultItem = CauldronUtils.getCauldronResult(itemStack.getItem());
 
     if (resultItem.isEmpty()) {
