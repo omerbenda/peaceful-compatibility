@@ -3,6 +3,7 @@ package com.vanrec.event;
 import com.vanrec.handler.CauldronHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -18,10 +19,14 @@ public class PlayerInteractListener {
     BlockState blockState = level.getBlockState(blockPos);
     Player player = event.getEntity();
     InteractionHand hand = event.getHand();
+    boolean result = false;
 
     if (blockState.is(Blocks.WATER_CAULDRON)) {
-      CauldronHandler.handleCauldronUse(
+      result = CauldronHandler.handleCauldronUse(
           level, blockPos, blockState, player, player.getItemInHand(hand));
     }
+
+    event.setCanceled(result);
+    event.setCancellationResult(InteractionResult.CONSUME);
   }
 }
