@@ -18,8 +18,7 @@ public class CauldronUtils {
     if (currValue == 1) {
       level.setBlock(blockPos, Blocks.CAULDRON.defaultBlockState(), 1);
     } else {
-      BlockState newState =
-          blockState.setValue(levelProperty, blockState.getValue(levelProperty) - 1);
+      BlockState newState = blockState.setValue(levelProperty, currValue - 1);
       level.setBlock(blockPos, newState, 1);
     }
   }
