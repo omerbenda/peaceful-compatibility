@@ -2,6 +2,7 @@ package com.vanrec;
 
 import com.mojang.logging.LogUtils;
 import com.vanrec.event.PlayerInteractListener;
+import com.vanrec.item.ModCreativeModeTabs;
 import com.vanrec.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,6 +27,7 @@ public class VanillaRecipes {
     IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
     ModItems.register(modEventBus);
+    ModCreativeModeTabs.register(modEventBus);
 
     modEventBus.addListener(this::commonSetup);
 
@@ -39,7 +41,11 @@ public class VanillaRecipes {
 
   private void commonSetup(final FMLCommonSetupEvent event) {}
 
-  private void addCreative(BuildCreativeModeTabContentsEvent event) {}
+  private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    if (event.getTabKey() == ModCreativeModeTabs.VANREC_TAB.getKey()) {
+      event.accept(ModItems.CHILL_ROD);
+    }
+  }
 
   @SubscribeEvent
   public void onServerStarting(ServerStartingEvent event) {}
