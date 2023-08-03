@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "disc",
+  "ingredients": [
+    {
+      "item": "vanrec:disc_ring"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:coal_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:music_disc_stal",
+    "count": 1
+  }
+}

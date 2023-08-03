@@ -46,6 +46,7 @@ public class VanillaRecipes {
   private void addCreative(BuildCreativeModeTabContentsEvent event) {
     if (event.getTabKey() == ModCreativeModeTabs.VANREC_TAB.getKey()) {
       event.accept(ModItems.CHILL_ROD);
+      event.accept(ModItems.DISC_RING);
     }
   }
 
