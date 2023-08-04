@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    " B ",
+    "BWB",
+    " B "
+  ],
+  "result": {
+    "item": "minecraft:ghast_tear"
+  },
+  "show_notification": true
+}
