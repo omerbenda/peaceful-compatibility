@@ -20,6 +20,11 @@ public class LootHandler {
               .add(LootItem.lootTableItem(Items.TOTEM_OF_UNDYING).setWeight(1))
               .add(LootItem.lootTableItem(Items.AIR).setWeight(16))
               .build());
+      case "minecraft:chests/buried_treasure" -> Optional.of(
+          LootPool.lootPool()
+              .add(LootItem.lootTableItem(Items.TRIDENT).setWeight(1))
+              .add(LootItem.lootTableItem(Items.AIR).setWeight(6))
+              .build());
       default -> Optional.empty();
     };
   }
