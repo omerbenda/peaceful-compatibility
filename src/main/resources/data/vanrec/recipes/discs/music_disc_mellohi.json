@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "disc",
+  "ingredients": [
+    {
+      "item": "vanrec:disc_ring"
+    },
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "minecraft:music_disc_mellohi",
+    "count": 1
+  }
+}

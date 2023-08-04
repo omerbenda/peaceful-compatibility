@@ -1,6 +1,7 @@
 package com.vanrec;
 
 import com.mojang.logging.LogUtils;
+import com.vanrec.event.LootEventListener;
 import com.vanrec.event.PlayerInteractListener;
 import com.vanrec.item.ModCreativeModeTabs;
 import com.vanrec.item.ModItems;
@@ -33,6 +34,7 @@ public class VanillaRecipes {
 
     MinecraftForge.EVENT_BUS.register(this);
     MinecraftForge.EVENT_BUS.register(new PlayerInteractListener());
+    MinecraftForge.EVENT_BUS.register(new LootEventListener());
 
     modEventBus.addListener(this::addCreative);
 
@@ -44,6 +46,7 @@ public class VanillaRecipes {
   private void addCreative(BuildCreativeModeTabContentsEvent event) {
     if (event.getTabKey() == ModCreativeModeTabs.VANREC_TAB.getKey()) {
       event.accept(ModItems.CHILL_ROD);
+      event.accept(ModItems.DISC_RING);
     }
   }
 
