@@ -15,6 +15,11 @@ public class LootHandler {
               .add(LootItem.lootTableItem(Items.WITHER_SKELETON_SKULL).setWeight(1))
               .add(LootItem.lootTableItem(Items.AIR).setWeight(12))
               .build());
+      case "minecraft:chests/pillager_outpost" -> Optional.of(
+          LootPool.lootPool()
+              .add(LootItem.lootTableItem(Items.TOTEM_OF_UNDYING).setWeight(1))
+              .add(LootItem.lootTableItem(Items.AIR).setWeight(16))
+              .build());
       default -> Optional.empty();
     };
   }

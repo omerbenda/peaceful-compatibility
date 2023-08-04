@@ -2,8 +2,8 @@
 Provides alternative ways to acquire items
 
 ---
-**This mod will make it easier (or possible) to obtain:**
-- Mob Heads (!!!)
+**This mod will make it easier to obtain:**
+- Mob Heads
 - Saddle
 - Cobweb
 - Blaze Rods
