@@ -5,13 +5,13 @@
     "B": {
       "item": "minecraft:blaze_rod"
     },
-    "W": {
-      "item": "minecraft:water_bucket"
+    "C": {
+      "item": "minecraft:crying_obsidian"
     }
   },
   "pattern": [
     " B ",
-    "BWB",
+    "BCB",
     " B "
   ],
   "result": {
