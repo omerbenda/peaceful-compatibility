@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    " I ",
+    "IOI",
+    " I "
+  ],
+  "result": {
+    "item": "peco:chill_rod"
+  },
+  "show_notification": true
+}

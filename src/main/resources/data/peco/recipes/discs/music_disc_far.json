@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "disc",
+  "ingredients": [
+    {
+      "item": "peco:disc_ring"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": {
+    "item": "minecraft:music_disc_far",
+    "count": 1
+  }
+}
