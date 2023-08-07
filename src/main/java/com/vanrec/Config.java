@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = VanillaRecipes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = PeacefulCompat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
   private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 

@@ -1,6 +1,6 @@
 package com.vanrec.item;
 
-import com.vanrec.VanillaRecipes;
+import com.vanrec.PeacefulCompat;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -9,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
   public static final DeferredRegister<Item> ITEMS =
-      DeferredRegister.create(ForgeRegistries.ITEMS, VanillaRecipes.MOD_ID);
+      DeferredRegister.create(ForgeRegistries.ITEMS, PeacefulCompat.MOD_ID);
 
   public static final RegistryObject<Item> CHILL_ROD =
       ITEMS.register("chill_rod", () -> new Item(new Item.Properties()));

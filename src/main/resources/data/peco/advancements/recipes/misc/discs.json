@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ring": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "peco:disc_ring"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ring"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "peco:discs/music_disc_11",
+      "peco:discs/music_disc_13",
+      "peco:discs/music_disc_blocks",
+      "peco:discs/music_disc_cat",
+      "peco:discs/music_disc_chirp",
+      "peco:discs/music_disc_far",
+      "peco:discs/music_disc_mall",
+      "peco:discs/music_disc_mellohi",
+      "peco:discs/music_disc_stal",
+      "peco:discs/music_disc_strad",
+      "peco:discs/music_disc_wait",
+      "peco:discs/music_disc_ward"
+    ]
+  },
+  "sends_telemetry_event": false
+}
