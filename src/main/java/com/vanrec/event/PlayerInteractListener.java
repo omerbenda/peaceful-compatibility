@@ -1,6 +1,7 @@
 package com.vanrec.event;
 
 import com.vanrec.handler.CauldronHandler;
+import com.vanrec.util.ShearUtils;
 import com.vanrec.util.StatsUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
@@ -22,6 +23,10 @@ public class PlayerInteractListener {
     BlockState blockState = level.getBlockState(blockPos);
     Player player = event.getEntity();
     InteractionHand hand = event.getHand();
+
+    if (event.getItemStack().is(Items.SHEARS)) {
+      ShearUtils.shearBlock(level, blockPos, event.getItemStack(), player);
+    }
 
     if (blockState.is(Blocks.WATER_CAULDRON)) {
       boolean result =
