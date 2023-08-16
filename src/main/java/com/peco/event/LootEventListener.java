@@ -1,6 +1,6 @@
-package com.vanrec.event;
+package com.peco.event;
 
-import com.vanrec.handler.LootHandler;
+import com.peco.handler.LootHandler;
 import java.util.Optional;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraftforge.event.LootTableLoadEvent;

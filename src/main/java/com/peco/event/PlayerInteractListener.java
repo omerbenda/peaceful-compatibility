@@ -1,8 +1,8 @@
-package com.vanrec.event;
+package com.peco.event;
 
-import com.vanrec.handler.CauldronHandler;
-import com.vanrec.util.ShearUtils;
-import com.vanrec.util.StatsUtils;
+import com.peco.handler.CauldronHandler;
+import com.peco.util.ShearUtils;
+import com.peco.util.StatsUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;

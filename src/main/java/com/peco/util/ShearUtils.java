@@ -1,4 +1,4 @@
-package com.vanrec.util;
+package com.peco.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

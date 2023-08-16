@@ -1,4 +1,4 @@
-package com.vanrec;
+package com.peco;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;

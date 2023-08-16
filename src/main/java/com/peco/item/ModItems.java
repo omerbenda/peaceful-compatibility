@@ -1,6 +1,6 @@
-package com.vanrec.item;
+package com.peco.item;
 
-import com.vanrec.PeacefulCompat;
+import com.peco.PeacefulCompat;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

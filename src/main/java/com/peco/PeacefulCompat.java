@@ -1,10 +1,10 @@
-package com.vanrec;
+package com.peco;
 
 import com.mojang.logging.LogUtils;
-import com.vanrec.event.LootEventListener;
-import com.vanrec.event.PlayerInteractListener;
-import com.vanrec.item.ModCreativeModeTabs;
-import com.vanrec.item.ModItems;
+import com.peco.event.LootEventListener;
+import com.peco.event.PlayerInteractListener;
+import com.peco.item.ModCreativeModeTabs;
+import com.peco.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
