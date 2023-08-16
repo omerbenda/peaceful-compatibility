@@ -27,18 +27,19 @@ public class ShearUtils {
     }
 
     if (!player.isCreative()) {
-      // FIXME: not playing any sound
-      itemStack.hurtAndBreak(
-          1,
-          player,
-          breakingPlayer -> level.playLocalSound(
-              blockPos,
-              SoundEvent.createVariableRangeEvent(
-                  new ResourceLocation("minecraft:entity.item.break")),
-              SoundSource.PLAYERS,
-              1f,
-              0.6f,
-              false));
+      itemStack.setDamageValue(itemStack.getDamageValue() + 1);
+
+      if (itemStack.getDamageValue() >= itemStack.getMaxDamage()) {
+        itemStack.hurtAndBreak(1, player, breaker -> {});
+        level.playLocalSound(
+            blockPos,
+            SoundEvent.createVariableRangeEvent(
+                new ResourceLocation("minecraft:entity.item.break")),
+            SoundSource.PLAYERS,
+            1f,
+            0.6f,
+            false);
+      }
     }
 
     level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 1);
@@ -67,14 +68,13 @@ public class ShearUtils {
 
   private static Optional<multipleDropsRecipe> getShearResult(Block shearedBlock) {
     if (shearedBlock.equals(Blocks.WHITE_WOOL)) {
-      return Optional.of(new multipleDropsRecipe(Items.STRING, 2, 4));
+      return Optional.of(new multipleDropsRecipe(Items.STRING, 1, 3));
     }
 
     return Optional.empty();
   }
 
   private record multipleDropsRecipe(Item item, int minDropCount, int maxDropCount) {
-
     public int getDropCount() {
       Random random = new Random();
 
