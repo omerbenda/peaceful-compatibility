@@ -1,10 +1,10 @@
 package com.peco.handler;
 
+import com.peco.model.MultipleItemResult;
 import com.peco.util.CauldronUtils;
 import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,14 +16,17 @@ public class CauldronHandler {
       return false;
     }
 
-    Optional<Item> resultItem = CauldronUtils.getCauldronResult(itemStack.getItem());
+    Optional<MultipleItemResult> resultItems = CauldronUtils.getCauldronResult(itemStack.getItem());
 
-    if (resultItem.isEmpty()) {
+    if (resultItems.isEmpty()) {
       return false;
     }
 
     CauldronUtils.lowerCauldronLevel(level, blockPos, blockState);
-    player.addItem(new ItemStack(resultItem.get()));
+
+    for (MultipleItemResult.MultipleItems multipleItems : resultItems.get().get()) {
+      player.addItem(new ItemStack(multipleItems.item(), multipleItems.count()));
+    }
 
     if (!player.isCreative()) {
       itemStack.shrink(1);

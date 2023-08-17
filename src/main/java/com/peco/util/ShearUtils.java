@@ -1,12 +1,12 @@
 package com.peco.util;
 
+import com.peco.model.RandomDropResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -14,12 +14,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.Optional;
-import java.util.Random;
 
 public class ShearUtils {
   public static boolean shearBlock(
       Level level, BlockPos blockPos, ItemStack itemStack, Player player) {
-    Optional<multipleDropsRecipe> optionalResultRecipe =
+    Optional<RandomDropResult> optionalResultRecipe =
         getShearResult(level.getBlockState(blockPos).getBlock());
 
     if (optionalResultRecipe.isEmpty()) {
@@ -50,7 +49,7 @@ public class ShearUtils {
         1f,
         0.6f,
         false);
-    multipleDropsRecipe resultRecipe = optionalResultRecipe.get();
+    RandomDropResult resultRecipe = optionalResultRecipe.get();
     int dropCount = resultRecipe.getDropCount();
 
     for (int dropIter = 0; dropIter < dropCount; dropIter++) {
@@ -66,19 +65,11 @@ public class ShearUtils {
     return true;
   }
 
-  private static Optional<multipleDropsRecipe> getShearResult(Block shearedBlock) {
+  private static Optional<RandomDropResult> getShearResult(Block shearedBlock) {
     if (shearedBlock.equals(Blocks.WHITE_WOOL)) {
-      return Optional.of(new multipleDropsRecipe(Items.STRING, 1, 3));
+      return Optional.of(new RandomDropResult(Items.STRING, 1, 3));
     }
 
     return Optional.empty();
-  }
-
-  private record multipleDropsRecipe(Item item, int minDropCount, int maxDropCount) {
-    public int getDropCount() {
-      Random random = new Random();
-
-      return random.nextInt(minDropCount, maxDropCount + 1);
-    }
   }
 }

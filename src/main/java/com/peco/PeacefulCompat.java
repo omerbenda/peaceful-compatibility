@@ -9,6 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -40,7 +41,7 @@ public class PeacefulCompat {
   private void commonSetup(final FMLCommonSetupEvent event) {}
 
   private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    if (event.getTabKey() == ModCreativeModeTabs.VANREC_TAB.getKey()) {
+    if (event.getTabKey() == ModCreativeModeTabs.PECO_TAB.getKey()) {
       event.accept(ModItems.CHILL_ROD);
       event.accept(ModItems.SLIME_PULP);
       event.accept(ModItems.DISC_RING);

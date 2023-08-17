@@ -13,7 +13,7 @@ public class ModCreativeModeTabs {
   public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
       DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PeacefulCompat.MOD_ID);
 
-  public static final RegistryObject<CreativeModeTab> VANREC_TAB =
+  public static final RegistryObject<CreativeModeTab> PECO_TAB =
       CREATIVE_MODE_TABS.register(
           "peco_tab",
           () ->
