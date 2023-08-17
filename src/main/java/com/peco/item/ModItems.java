@@ -14,6 +14,9 @@ public class ModItems {
   public static final RegistryObject<Item> CHILL_ROD =
       ITEMS.register("chill_rod", () -> new Item(new Item.Properties()));
 
+  public static final RegistryObject<Item> SLIME_PULP =
+          ITEMS.register("slime_pulp", () -> new Item(new Item.Properties()));
+
   public static final RegistryObject<Item> DISC_RING =
       ITEMS.register("disc_ring", () -> new Item(new Item.Properties()));
 
