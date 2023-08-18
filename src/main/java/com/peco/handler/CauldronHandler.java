@@ -4,6 +4,9 @@ import com.peco.model.MultipleItemResult;
 import com.peco.util.CauldronUtils;
 import java.util.Optional;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -23,6 +26,14 @@ public class CauldronHandler {
     }
 
     CauldronUtils.lowerCauldronLevel(level, blockPos, blockState);
+    level.playLocalSound(
+        blockPos,
+        SoundEvent.createVariableRangeEvent(
+            new ResourceLocation("minecraft:entity.hostile.swim")),
+        SoundSource.PLAYERS,
+        1f,
+        0.6f,
+        false);
 
     for (MultipleItemResult.MultipleItems multipleItems : resultItems.get().get()) {
       player.addItem(new ItemStack(multipleItems.item(), multipleItems.count()));

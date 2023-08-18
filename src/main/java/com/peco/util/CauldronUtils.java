@@ -31,7 +31,7 @@ public class CauldronUtils {
     } else if (ingredient == Items.BLAZE_ROD) {
       return Optional.of(
           new MultipleItemResult(
-              new MultipleItemResult.MultipleItems(Items.GUNPOWDER, 4),
+              new MultipleItemResult.MultipleItems(Items.GUNPOWDER, 2),
               new MultipleItemResult.MultipleItems(ModItems.CHILL_ROD.get())));
     }
 
