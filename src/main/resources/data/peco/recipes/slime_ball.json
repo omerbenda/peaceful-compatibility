@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.6,
+  "ingredient": {
+    "item": "peco:slime_pulp"
+  },
+  "result": "minecraft:slime_ball"
+}

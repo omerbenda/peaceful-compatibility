@@ -1,7 +1,8 @@
-package com.vanrec.event;
+package com.peco.event;
 
-import com.vanrec.handler.CauldronHandler;
-import com.vanrec.util.StatsUtils;
+import com.peco.handler.CauldronHandler;
+import com.peco.util.ShearUtils;
+import com.peco.util.StatsUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -22,6 +23,10 @@ public class PlayerInteractListener {
     BlockState blockState = level.getBlockState(blockPos);
     Player player = event.getEntity();
     InteractionHand hand = event.getHand();
+
+    if (event.getItemStack().is(Items.SHEARS)) {
+      ShearUtils.shearBlock(level, blockPos, event.getItemStack(), player);
+    }
 
     if (blockState.is(Blocks.WATER_CAULDRON)) {
       boolean result =
