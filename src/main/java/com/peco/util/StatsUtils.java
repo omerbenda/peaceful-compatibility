@@ -1,4 +1,4 @@
-package com.vanrec.util;
+package com.peco.util;
 
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.StatType;

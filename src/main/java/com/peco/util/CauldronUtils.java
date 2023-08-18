@@ -1,5 +1,7 @@
-package com.vanrec.util;
+package com.peco.util;
 
+import com.peco.item.ModItems;
+import com.peco.model.MultipleItemResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -8,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
-import java.util.Optional;
+import java.util.*;
 
 public class CauldronUtils {
   public static void lowerCauldronLevel(Level level, BlockPos blockPos, BlockState blockState) {
@@ -23,9 +25,14 @@ public class CauldronUtils {
     }
   }
 
-  public static Optional<Item> getCauldronResult(Item ingredient) {
+  public static Optional<MultipleItemResult> getCauldronResult(Item ingredient) {
     if (ingredient == Items.WITHER_SKELETON_SKULL) {
-      return Optional.of(Items.SKELETON_SKULL);
+      return Optional.of(new MultipleItemResult(Items.SKELETON_SKULL));
+    } else if (ingredient == Items.BLAZE_ROD) {
+      return Optional.of(
+          new MultipleItemResult(
+              new MultipleItemResult.MultipleItems(Items.GUNPOWDER, 2),
+              new MultipleItemResult.MultipleItems(ModItems.CHILL_ROD.get())));
     }
 
     return Optional.empty();

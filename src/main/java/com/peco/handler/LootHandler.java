@@ -1,4 +1,4 @@
-package com.vanrec.handler;
+package com.peco.handler;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
