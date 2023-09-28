@@ -10,4 +10,6 @@ This mod's mission is to make minecraft's peaceful mode as complete as possible
 By providing alternative ways to acquire items you will now be able to actually complete the game on peaceful mode
 </p>
 
+###### [Download Here!](https://www.curseforge.com/minecraft/mc-mods/peaceful-compatibility)
+
 ###### [Check the wiki for details about your mod's version](https://github.com/omerbenda/peaceful-compatibility/wiki)
